@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>BDS Recipe App</title>
+    <style>
+        /* Your existing styles... */
+    </style>
 </head>
 <body>
     <h1>BDS Recipe App</h1>
     <form method="post">
-        <label for="ingredients">Enter your ingredients separated by commas (ex: salmon,lemon,pepper):</label>
+        <label for="ingredients">Enter your ingredients separated by commas (ex: salmon, lemon, pepper):</label>
         <input type="text" name="ingredients" id="ingredients" required>
         <button type="submit">Find Recipes</button>
     </form>
-    
+
     {% if recipes %}
-        <h2>Recipes you can make with: {{ ingredients|join(', ') }}</h2>
-        <ul>
-            {% for recipe in recipes %}
-                <li>{{ recipe.name }}</li>
-            {% endfor %}
-        </ul>
+    <h2>Recipes you can make with: {{ ingredients|join(', ') }}</h2>
+    <ul>
+        {% for recipe in recipes %}
+        <li>
+            <h3>{{ recipe.recipe.label }}</h3>
+            <p>{{ recipe.recipe.source }}</p>
+            <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200">
+        </li>
+        {% endfor %}
+    </ul>
     {% endif %}
 </body>
 </html>
-
+ 
