@@ -18,6 +18,7 @@ def get_matching_recipes(ingredients):
     if response.status_code == 200: #Ensuring API call was successful
         recipe_list = response.json()
         matching_recipes = recipe_list.get("hits", []) #Extracts list of recipes
+        return matching_recipes
     
         for hit in matching_recipes:
             recipe_name = hit['recipe']['label']
