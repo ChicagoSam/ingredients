@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+   <html lang="en">
+
+ <head>
+  <link rel="stylesheet" type="text/css" href="recipestyle.css">  
     <meta charset="UTF-8">
-    <title>BDS Recipe App</title>
-    <style>
-        /* Your existing styles... */
-    </style>
-</head>
-<body>
+       <title>BDS Recipe App</title>
+ </head>
+
+
+ <body>
     <h1>BDS Recipe App</h1>
     <form method="post">
-        <label for="ingredients">Enter your ingredients separated by commas (ex: salmon, lemon, pepper):</label>
-        <input type="text" name="ingredients" id="ingredients" required>
-        <button type="submit">Find Recipes</button>
+          <label for="ingredients">Enter your ingredients separated by commas (ex: salmon, lemon, pepper):</label>
+          <input type="text" name="ingredients" id="ingredients" required>
+         <button type="submit">Find Recipes</button>
     </form>
-
-    {% if recipes %}
+      {% if recipes %}
     <h2>Recipes you can make with: {{ ingredients|join(', ') }}</h2>
     <ul>
-        {% for recipe in recipes %}
-        <li>
-            <h3>{{ recipe.recipe.label }}</h3>
-            <p>Read the recipe at: <a href="{{ recipe.recipe.url }}">{{ recipe.recipe.source }}</a></p>
-            <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200">
-        </li>
-        {% endfor %}
+    {% for recipe in recipes %}
+    <li>
+        <h3>{{ recipe.recipe.label }}</h3>
+        <p>{{ recipe.recipe.source }}</p>
+        <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200">
+    </li>
+    {% endfor %}
     </ul>
     {% endif %}
 </body>
-</html>
+
+
+<script>
+    var recipeList = document.querySelector('.recipe-list');
+    recipeList.style.backgroundColor = '#f0f0f0'; 
+    recipeList.style.border = '1px solid #ddd'; 
+</script>
+
