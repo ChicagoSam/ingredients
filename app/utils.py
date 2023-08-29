@@ -19,19 +19,6 @@ def get_matching_recipes(ingredients):
         recipe_list = response.json()
         matching_recipes = recipe_list.get("hits", []) #Extracts list of recipes
         return matching_recipes
-    
-        for hit in matching_recipes:
-            recipe_name = hit['recipe']['label']
-            recipe_url = hit['recipe']['url']
-            recipe_ingredients = hit['recipe']['ingredients']
-            recipeDict = {}
-            recipeDict['name'] = recipe_name
-            recipeDict['url'] = recipe_url
-            recipeDict['ingredients'] = recipe_ingredients
-            matching_recipes.append(recipeDict)
-        
-        return matching_recipes
-            
 
     else:
         error_message = "API call failed. Please try again later."
