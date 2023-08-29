@@ -8,4 +8,4 @@ lsw_url = "https://api.edamam.com/api/recipes/v2?type=public&q=lemon%2Csugar%2Cw
 
 #ensure utils returns the correct list
 def test_get_matching_recipes():
-    assert get_matching_recipes('lemon,sugar,water') == requests.get(lsw_url).json().get('hits')
+    assert get_matching_recipes(['lemon', 'sugar', 'water']) == requests.get(lsw_url).json().get('hits', [])

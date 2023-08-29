@@ -34,3 +34,5 @@ def get_matching_recipes(ingredients):
     else:
         error_message = "API call failed. Please try again later."
         return error_message
+
+print(get_matching_recipes(['lemon', 'sugar', 'water']))
