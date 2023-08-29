@@ -12,7 +12,7 @@ def get_matching_recipes(ingredients):
     #url = f"{API_URL}&q={'%2C%20'.join(ingredients)}&app_id={APP_ID}&app_key={APP_KEY}"
 
     url = f"{API_URL}&q={'%2C'.join(ingredients)}&app_id={APP_ID}&app_key={APP_KEY}"
-    #print(url)
+    print(url)
     response = requests.get(url)
 
     if response.status_code == 200: #Ensuring API call was successful
@@ -24,4 +24,4 @@ def get_matching_recipes(ingredients):
         error_message = "API call failed. Please try again later."
         return error_message
 
-print(get_matching_recipes(['lemon', 'sugar', 'water']))
+print(get_matching_recipes(['lemon', 'sugar', 'water'])[0]["recipe"]["label"])
