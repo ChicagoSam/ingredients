@@ -22,7 +22,9 @@
     {% for recipe in recipes %}
     <li>
         <h3>{{ recipe.recipe.label }}</h3>
-        <p>{{ recipe.recipe.source }}</p>
+        <a href="{{ recipe.recipe.url }}" target="_blank">
+            <p>Recipe source: {{ recipe.recipe.source }}</p>
+        </a>
         <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200">
     </li>
     {% endfor %}

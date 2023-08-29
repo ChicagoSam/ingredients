@@ -1,11 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    /* NEXT LINE: Need local file OR working link to image file*/
     background-image: url("Recipebackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
+    background-attachment: fixed; /* Keep the background image fixed */
 }
 html, body {
     height: 100%;
@@ -117,6 +117,3 @@ li:hover {
     justify-content: center;
     height: 100vh; /* Ensure the list fills the entire viewport height */
 }
-
-
-
