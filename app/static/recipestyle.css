@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    /* NEXT LINE: Need local file OR working link to image file*/
     background-image: url("Recipebackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,7 +63,7 @@ h2 {
     text-align: center; 
 }
 
-
+/*FOR LIST: 1-Make each box linked to recipe as we do have url. 2-Center boxes*/
 ul {
     margin: 0; 
     padding: 0; 
@@ -103,4 +104,12 @@ li:hover {
     transform: scale(1.03); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
+
+
+.recipe-list {
+    list-style: disc;
+    padding: 0;
+    text-align: center;
+}
+
 
