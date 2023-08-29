@@ -79,6 +79,7 @@ li {
     max-width: 400px; 
     border-radius: 5px; 
     transition: transform 0.2s; 
+    margin: 10px auto; /* Center Horizontally*/
 }
 
 
@@ -110,6 +111,12 @@ li:hover {
     list-style: disc;
     padding: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering items */
+    justify-content: center;
+    height: 100vh; /* Ensure the list fills the entire viewport height */
 }
+
 
 
