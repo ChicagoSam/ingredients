@@ -21,7 +21,7 @@
         {% for recipe in recipes %}
         <li>
             <h3>{{ recipe.recipe.label }}</h3>
-            <p>{{ recipe.recipe.source }}</p>
+            <p>Read the recipe at: <a href="{{ recipe.recipe.url }}">{{ recipe.recipe.source }}</a></p>
             <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200">
         </li>
         {% endfor %}
@@ -29,4 +29,3 @@
     {% endif %}
 </body>
 </html>
- 
