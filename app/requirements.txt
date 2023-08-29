@@ -1,0 +1,5 @@
+# python dependencies
+flask
+pytest
+requests
+urllib3<2.0
