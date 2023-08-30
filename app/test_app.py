@@ -19,7 +19,7 @@ def test_not_matching_recipes():
         assert get_matching_recipes(val) == []
 
 # test what happens if something other than a GET or POST is sent to your page
-SERVER_URL = "http://10.14.192.38:2225"  # Replace with the actual URL of your server
+SERVER_URL = "http://10.14.192.38:2225" 
 
 def test_disallowed_methods(): 
     disallowed_methods = ["PATCH", "DELETE", "PUT"]
