@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-app
+  labels:
+    app: v1 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: recipe-app
+  template:
+    metadata:
+      labels:
+        app: recipe-app
+    spec:
+      containers:
+      - name: recipes
+        image: ghcr.io/chicagosam/ingredients/recipe-app:1.0
+        ports:
+        - containerPort: 2225
